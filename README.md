@@ -23,6 +23,7 @@ MVVM
 Clean Architecture
 SOLID
 Koin
+
 Autor:
 André Reis da Silva
 
