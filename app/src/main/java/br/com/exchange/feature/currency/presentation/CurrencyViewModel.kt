@@ -14,14 +14,17 @@ class CurrencyViewModel(private val currencyUseCase: CurrencyUseCase = CurrencyU
         fetch("brl")
     }
 
-    private val _currencyViewState: MutableStateFlow<CurrencyViewState> =
-        MutableStateFlow(CurrencyViewState.Loading)
+    private val _currencyViewState = MutableStateFlow<CurrencyViewState>(CurrencyViewState.Loading)
     val currencyViewState = _currencyViewState.asStateFlow()
 
     fun fetch(currency: String) {
         viewModelScope.launch {
-            val response = currencyUseCase.getCurrency(currency)
-            _currencyViewState.update { CurrencyViewState.Success(response) }
+            try {
+                val response = currencyUseCase.getCurrency(currency)
+                _currencyViewState.update { CurrencyViewState.Success(response) }
+            } catch (exception: Exception) {
+                _currencyViewState.update { CurrencyViewState.Error }
+            }
         }
     }
 }
