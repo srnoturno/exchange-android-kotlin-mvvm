@@ -9,6 +9,7 @@ Este é um aplicativo simples de conversão de moedas que permite aos usuários 
 - Permite que o usuário selecione outras moedas bases.
 - Permite que o usuário atualize para receber cotações mais recentes.
 - Bloqueia a tela durante as consultas e exibe um indicador de carregamento.
+- ![Exchange Usage](https://github.com/srnoturno/exchange-android-kotlin-mvvm/assets/51416133/4b1b3f42-04af-4254-9db0-a559703a9eb7)
 
 ## Instruções para Utilização
 
