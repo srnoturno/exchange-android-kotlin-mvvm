@@ -17,6 +17,14 @@ class CurrencyViewModel(private val currencyUseCase: CurrencyUseCase = CurrencyU
     private val currencyReduce = Redukt<CurrencyViewState>(CurrencyViewState.Loading)
     private val _currencyViewState = MutableStateFlow<CurrencyViewState>(CurrencyViewState.Loading)
     val currencyViewState = _currencyViewState.asStateFlow()
+    private var _currentCurrency = "brl"
+    val currentCurrency by :: _currentCurrency
+    val currencyList = listOf("BRL",
+    "AED",
+    "USD",
+    "CNY",
+    "CAD",
+    "AUD")
 
     init {
         currencyReduce.reducers["currencyReduce"] = CurrencyReducer()
@@ -48,5 +56,14 @@ class CurrencyViewModel(private val currencyUseCase: CurrencyUseCase = CurrencyU
                 currencyReduce.dispatch(Action<Any>(CurrencyActions.ShowError.name) )
             }
         }
+    }
+
+    fun setNewBaseCurrency(newBaseCurrency: String) {
+        _currentCurrency = newBaseCurrency
+        fetch(newBaseCurrency)
+    }
+
+    fun refreshCurrencyData() {
+        fetch(_currentCurrency)
     }
 }
