@@ -1,31 +1,30 @@
-Exchange App
+Currency Converter App
 
-Este é um aplicativo Android desenvolvido em Kotlin, seguindo a arquitetura MVVM (Model-View-ViewModel), com princípios de Clean Architecture e SOLID. Este projeto foi inspirado em um exemplo simples (disponível em "https://github.com/codeWithCal/FetchDataFromWebAndroid"), onde identifiquei oportunidades de melhorias e adaptei-as para este aplicativo.
+Este é um aplicativo simples de conversão de moedas que permite aos usuários visualizar as cotações de uma moeda base em relação a outras moedas. A aplicação é desenvolvida em Kotlin e utiliza uma variedade de tecnologias modernas para proporcionar uma experiência fluida aos usuários.
 
-Melhorias a serem Realizadas:
-Utilizar o Koin para instanciação da ViewModel: Integrar o Koin ao projeto para gerenciar a injeção de dependência e facilitar a instanciação da ViewModel, garantindo uma abordagem mais limpa e desacoplada.
-
-Implementar tratamento de erros na ViewModel: Desenvolver um tratamento de erros na ViewModel para lidar com situações inesperadas e fornecer feedback adequado para o usuário, melhorando a robustez e a experiência do aplicativo.
-
-Extrair "magic strings" do código: Identificar e extrair "magic strings", como "brl", do código-fonte para melhorar a manutenibilidade e facilitar a localização do aplicativo.
-
-Como Contribuir:
-Se você deseja contribuir para este projeto, siga estas etapas:
-
-Faça um fork do repositório e clone-o em sua máquina local.
-Crie uma branch com um nome descritivo (git checkout -b nome-da-sua-branch).
-Faça suas alterações e comente-as de forma clara e concisa.
-Envie suas alterações (git push origin nome-da-sua-branch).
-Abra um pull request explicando as alterações propostas.
-Tecnologias Utilizadas:
-Kotlin
-MVVM
-Clean Architecture
-SOLID
-Koin
-
-Autor:
-André Reis da Silva
-
-Licença:
-Este projeto está licenciado sob a Licença MIT - consulte o arquivo LICENSE.md para mais detalhes.
+Funcionalidades
+Inicia utilizando a cotação em BRL como base.
+Exibe cards de cotação da moeda base em outras moedas.
+Permite que o usuário selecione outras moedas bases.
+Permite que o usuário atualize para receber cotações mais recentes.
+Bloqueia a tela durante as consultas e exibe um indicador de carregamento.
+Instruções para Utilização
+Clone o projeto para sua máquina local.
+Build e execute o projeto utilizando o Android Studio ou através da linha de comando.
+O projeto está desenvolvido em Kotlin 1.9 e funciona bem em diversas versões do Android. Recomenda-se utilizar pelo menos o Android 13 (API 33).
+Certifique-se de ter o Android Studio versão "Iguana | 2023.2.1" instalado.
+Arquitetura e Tecnologias Utilizadas
+MVVM: Utilizada para separar claramente as responsabilidades entre a lógica de negócios e a interface do usuário.
+Clean Redux: Adotada para manter o código limpo e facilitar a escalabilidade do projeto.
+Kotlin: Linguagem de programação moderna e concisa.
+Ktor: Framework para criação de clientes e servidores HTTP em Kotlin.
+Coroutines: Utilizadas para facilitar a programação assíncrona e concorrente.
+Compose: Utilizado para construção de interfaces de usuário declarativas.
+JUnit: Framework de teste para Java e Kotlin.
+MockK: Biblioteca de mocking para Kotlin.
+Pontos a Melhorar
+Adicionar injeção de dependências com Koin ou Hilt para melhorar a modularidade e a testabilidade do código.
+Implementar testes de UI com a lib do Compose Test para garantir a qualidade e robustez das interfaces de usuário.
+Reduzir o acoplamento entre as telas, visando torná-las mais reutilizáveis e facilitar a manutenção futura. Por exemplo, a componenteização das telas pode ser realizada, como no caso do CurrencyCard, que poderia receber dois atributos ("título" e "subtítulo") para facilitar seu reaproveitamento em outras partes do aplicativo.
+Contribuições
+Contribuições são bem-vindas! Sinta-se à vontade para abrir issues ou pull requests para melhorar este projeto.
