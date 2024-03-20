@@ -27,6 +27,7 @@ Este é um aplicativo simples de conversão de moedas que permite aos usuários 
 - **Coroutines:** Utilizadas para facilitar a programação assíncrona e concorrente.
 - **Compose:** Utilizado para construção de interfaces de usuário declarativas.
 - **JUnit:** Framework de teste para Java e Kotlin.
+- ![test](https://github.com/srnoturno/exchange-android-kotlin-mvvm/assets/51416133/1b81ae6f-c55e-4457-b1c1-ffea6898195c)
 - **MockK:** Biblioteca de mocking para Kotlin.
 
 ## Pontos a Melhorar
